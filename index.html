@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>jquery.animateText examples</title>
+	<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/jquery.transit/jquery.transit.js"></script>
+	<script type="text/javascript" src="src/animateText.js"></script>
+	<style type="text/css">
+		.textBlock, .textBlock2{
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		.textBlock2{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="textBlock">The quick brown fox jumps over the lazy dog.</div>
+	<div class="textBlock2">The zany dog frowns quietly at the purple jello.</div>
+	<script type="text/javascript">
+		
+		setTimeout(function(){
+			$(".textBlock").animateText({
+				to:{
+					left:0,
+					scale:1.2,
+					opacity:0
+				},
+				duration:1000
+			});
+			setTimeout(function(){
+				$(".textBlock2").css({
+					opacity:1
+				}).animateText({
+					from:{
+						left:-0,
+						scale:1.2,
+						opacity:0
+					},
+					duration:1000
+				});
+			}, 500);
+		}, 1000);
+	</script>
+</body>
+</html>

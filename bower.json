@@ -1,0 +1,11 @@
+{
+  "name": "animateText",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "",
+    "jquery.transit": "~0.9.9"
+  },
+  "devDependencies": {
+    "qunit": "~1.11.0"
+  }
+}
