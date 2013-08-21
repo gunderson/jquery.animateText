@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # jQuery Text Animation plugin
 
 jQ
@@ -29,3 +30,7 @@ _(Coming soon)_
 
 ## Release History
 _(Nothing yet)_
+=======
+jquery.animateText
+==================
+>>>>>>> 4957b96e37f0008b554469861d76bdc98c5a6fdc
