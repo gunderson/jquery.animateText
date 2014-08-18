@@ -32,3 +32,7 @@ _(Nothing yet)_
 =======
 jquery.animateText
 ==================
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/gunderson/jquery.animatetext/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
