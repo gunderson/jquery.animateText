@@ -4,20 +4,31 @@ jQ
 
 ## Getting Started
 
-Download the [production version][min] or the [development version][max].
+Download the  [development version][max].
 
-[min]: https://raw.github.com/gunderson/jquery-textanimation/master/dist/jquery.textanimation.min.js
-[max]: https://raw.github.com/gunderson/jquery-textanimation/master/dist/jquery.textanimation.js
+[max]: https://raw.github.com/gunderson/jquery-textanimation/master/dist/jquery.animateText.js
 
 In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/textanimation.min.js"></script>
+<script src="src/jquery.animatetext.js"></script>
 <script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
-});
+  $("p").animateText(
+  	.from({
+  		// delay between characters
+  		delay: 20, 
+  		// animation duration, per character
+  		duration: 500, 
+  		// defaults to animating in order from first to last
+  		// options: "forward", "reverse", "random"
+  		order: "forward",
+  		// options: "character", "word" 
+  		grouping: "character",
+	  	css: {
+	  		// css props to animate go here
+	  	}
+  	});
 </script>
 ```
 
@@ -33,6 +44,4 @@ _(Nothing yet)_
 jquery.animateText
 ==================
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/gunderson/jquery.animatetext/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

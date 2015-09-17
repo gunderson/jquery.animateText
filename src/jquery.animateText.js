@@ -67,10 +67,16 @@
       }
     }
 
+    function getSearch(options){
+      return options.grouping && options.grouping === "word" ? ".at-word" : "at-character";
+    }
+
     this.from = function(options){
-      var $characters = $holder.find('.at-character');
-      _this.options.length = $characters.length;
-      $characters.each(function(i, character){
+      var search = getSearch(options);
+
+      var $els = $holder.find(search);
+      _this.options.length = $els.length;
+      $els.each(function(i, character){
         var $character = $(character);
         var originalCSS = {};
         $.each(options.css, function(i){
@@ -78,7 +84,7 @@
         });
         $character.css(options.css);
         setTimeout(function(){
-          $character.transition(originalCSS, options.duration, 'easeOutQuad', function(){
+          $character.animate(originalCSS, options.duration, 'easeOutQuad', function(){
             checkComplete(i);
           });
         }, i * options.delay);
@@ -87,12 +93,14 @@
     };
 
     this.to = function(options){
-      var $characters = $holder.find('.at-character');
-      _this.options.length = $characters.length;
-      $characters.each(function(i, character){
+      var search = getSearch(options);
+
+      var $els = $holder.find(search);
+      _this.options.length = $els.length;
+      $els.each(function(i, character){
         var $character = $(character);
         setTimeout(function(){
-          $character.transition(options.css, options.duration, 'easeOutQuad', function(){
+          $character.animate(options.css, options.duration, 'easeOutQuad', function(){
             checkComplete(i);
           });
         }, i * options.delay);
@@ -100,8 +108,11 @@
       return _this;
     };
 
-    this.hide = function(){
-      $(".at-character").hide();
+    this.hide = function(options){
+      var search = getSearch(options);
+
+      var $els = $holder.find(search);
+      $els.hide();
     };
 
     this.init();
@@ -112,9 +123,16 @@
 
   // Static method default options.
   $.animateText.options = {
-    delay: 20,
-    duration: 500,
-    originalString: ''
+    // delay between characters
+    delay: 20, 
+    // animation duration, per character
+    duration: 500, 
+    // defaults to animating in order from first to last
+    // options: "forward", "reverse", "random"
+    order: "forward",
+    // options: "character", "word" 
+    grouping: "character",
+    originalString: '',
   };
 
   // Collection method.
