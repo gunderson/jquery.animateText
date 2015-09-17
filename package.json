@@ -5,6 +5,7 @@
   "keywords": [
     "jquery-plugin"
   ],
+  "main": "./src/animateText.js",
   "homepage": "https://github.com/gunderson/animateText",
   "author": {
     "name": "Patrick Gunderson",
